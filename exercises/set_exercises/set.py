@@ -83,11 +83,23 @@ def clearSet(set):
     return set
 
 # 13. Write a Python program to use of frozensets.
+def freezeSet(set):
+    freezeSet = frozenset(set)
+    return freezeSet
 
 # 14. Write a Python program to find maximum and the minimum value in a set.
+def findMax(set):
+    maxValue = max(set)
+    return maxValue
+
+def findMin(set):
+    minValue = min(set)
+    return minValue
 
 # 15. Write a Python program to find the length of a set.
-
+def findLength(set):
+    length = len(set)
+    return length
 
 def main():
     print("-------------------------------------------------")
@@ -181,13 +193,26 @@ def main():
     print("Cleared wannabe programming languages:", cleared_wannabe)
 
     print("-------------------------------------------------")
-    print("Exercise 13")
+    print("Exercise 13 - frozen set")
+    print("Object oriented languages", objectOrientedLanguages)
+    frozen_set = freezeSet(objectOrientedLanguages)
+    print(frozen_set)
     
-    
-    print("-------------------------------------------------")
-    print("Exercise 14")
 
     print("-------------------------------------------------")
-    print("Exercise 15")
+    print("Exercise 14 - find max and minimum value in set")
+    print("Object oriented languages", objectOrientedLanguages)
+    maximum = findMax(objectOrientedLanguages)
+    minimum = findMin(objectOrientedLanguages)
+    print("Max:", maximum)
+    print("Minimum:", minimum)
+    
+    print("-------------------------------------------------")
+    print("Exercise 15 - length")
+    print("Object oriented languages", objectOrientedLanguages)
+    length = findLength(objectOrientedLanguages)
+    print("Length:", length)
+
+
 main()
 
