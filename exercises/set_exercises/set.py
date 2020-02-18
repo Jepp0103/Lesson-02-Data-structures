@@ -64,15 +64,23 @@ def symmetricDifferSets(set1, set2):
 #  ![](https://www.linuxtopia.org/online_books/programming_books/python_programming/images/p2c6-symmdiff.png)
 
 # 10. Write a Python program to issubset and issuperset.
-def isSubet(set1, set2):
-    
+def isSubset(set1, set2):
+    return set1.issubset(set2)
 
+def isSuperset(set1, set2):
+    return set1.issuperset(set2)
 
 # 11. Write a Python program to create a shallow copy of sets.
+def shallowCopySet(set):
+    newSet = set.copy()
+    return newSet
 
 # Note : Shallow copy is a bit-wise copy of an object. A new object is created that has an exact copy of the values in the original object.
 
 # 12. Write a Python program to clear a set.
+def clearSet(set):
+    set.clear()
+    return set
 
 # 13. Write a Python program to use of frozensets.
 
@@ -140,16 +148,42 @@ def main():
 
     print("-------------------------------------------------")
     print("Exercise 10 - isSubset and isSuperset")
+    print("Programminglanguages:", programmingLanguages)
+    print("Object oriented languages", objectOrientedLanguages)
+    subset1 = isSubset(programmingLanguages, objectOrientedLanguages)
+    subset2 = isSubset(objectOrientedLanguages, programmingLanguages)
+    print("Is set1 subset of set2?:", subset1)
+    print("Is set2 subset of set1?:", subset2)
+    programmingLanguages.remove("SQL")
+    programmingLanguages.remove("Scala")
+    subset1 = isSubset(programmingLanguages, objectOrientedLanguages)
+    print("Programminglanguages:", programmingLanguages)
+    print("Is set1 subset of set2?:", subset1)
+
+    print(" ")
+    programmingLanguages.add('C#')
+    print("Programminglanguages:", programmingLanguages)
+    print("Object oriented languages", objectOrientedLanguages)
+    superset = isSuperset(programmingLanguages, objectOrientedLanguages)
+    print("Is set1 superset of set2?", superset)
+    superset = isSuperset(objectOrientedLanguages, programmingLanguages) #swapping
+    print("Is set2 superset of set1?", superset)
+
 
     print("-------------------------------------------------")
-    print("Exercise 11")
+    print("Exercise 11 - shallow copy")
+    wannabeProgrammingLanguages = shallowCopySet(programmingLanguages)
+    print("Wannabe programminglanguages:", wannabeProgrammingLanguages)
 
     print("-------------------------------------------------")
-    print("Exercise 12")
+    print("Exercise 12 - clear")
+    cleared_wannabe = clearSet(wannabeProgrammingLanguages)
+    print("Cleared wannabe programming languages:", cleared_wannabe)
 
     print("-------------------------------------------------")
     print("Exercise 13")
-
+    
+    
     print("-------------------------------------------------")
     print("Exercise 14")
 
