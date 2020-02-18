@@ -34,13 +34,11 @@ def match_ends(words):
 def front_x(words):
   no_x = []
   x = []
-
   for word in words:
     if(word[0] == "x"):
       x.append(word)
     else:
       no_x.append(word)
-      
   return sorted(x) + sorted(no_x)
 
 # C. sort_last

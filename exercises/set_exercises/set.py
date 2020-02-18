@@ -6,10 +6,8 @@
 
 
 # 1. Write a Python program to create a set.
-programmingLanguages = set(['Python', 'Java', 'C#'])
-
-#'Scala', 'SQL', 'JavaScript', "HTML
-
+programmingLanguages = set(['Python', 'Java'])
+objectOrientedLanguages = set(["Python", "C#", "Java", "C"])
 # 2. Write a Python program to iteration over sets.
 
 def iterateSet():
@@ -36,27 +34,38 @@ def removeLanguageIfExists(programmingLanguage):
     else:
         return "Language not found"
 
-    
-
-
 # 6. Write a Python program to create an intersection of sets.
-
+def interSectSets(set1, set2):
+    intersectionSet = set1.intersection(set2)
+    return intersectionSet
 # ![](https://www.linuxtopia.org/online_books/programming_books/python_programming/images/p2c6-intersection.png)
 
 # 7. Write a Python program to create a union of sets.
-
+def unifySets(set1, set2):
+    unionSet = set1.union(set2)
+    return unionSet
 #  ![](https://www.linuxtopia.org/online_books/programming_books/python_programming/images/p2c6-union.png)
 
 # 8. Write a Python program to create set difference.
+def differSets1(set1, set2):
+    differenceSet1 = list(set(set1) - set(set2))
+    return differenceSet1
+
+def differSets2(set1, set2):
+    differenceSet2 = list(set(set2) - set(set1))
+    return differenceSet2
 
 #  ![](https://www.linuxtopia.org/online_books/programming_books/python_programming/images/p2c6-difference.png)
 
 # 9. Write a Python program to create a symmetric difference.
-
+def symmetricDifferSets(set1, set2):
+    symdifferenceSet = set1.symmetric_difference(set2)
+    return symdifferenceSet
 #  ![](https://www.linuxtopia.org/online_books/programming_books/python_programming/images/p2c6-symmdiff.png)
 
 # 10. Write a Python program to issubset and issuperset.
-
+def isSubet(set1, set2):
+    
 
 
 # 11. Write a Python program to create a shallow copy of sets.
@@ -74,36 +83,63 @@ def removeLanguageIfExists(programmingLanguage):
 
 def main():
     print("-------------------------------------------------")
-    print("Exercise 1")
+    print("Exercise 1 - create set")
     print(programmingLanguages)
 
     print("-------------------------------------------------")
-    print("Exercise 2")
+    print("Exercise 2 - iterate")
     print(iterateSet())
 
     print("-------------------------------------------------")
-    print("Exercise 3")
+    print("Exercise 3 - adding")
+    addLanguage('Scala')
+    addLanguage('SQL')
+    addLanguage('JavaScript')
+    addLanguage('HTML')
+    print(programmingLanguages)
 
     print("-------------------------------------------------")
-    print("Exercise 4")
+    print("Exercise 4 - remove items")
+    removeLanguage('HTML')
+    removeLanguage('JavaScript')
+    print(programmingLanguages)
 
     print("-------------------------------------------------")
-    print("Exercise 5")
+    print("Exercise 5 - remove items if present")
+    removeLanguageIfExists('Python')
+    print(removeLanguageIfExists('JavaScript'))
+    print(programmingLanguages)
 
     print("-------------------------------------------------")
-    print("Exercise 6")
+    print("Exercise 6 - intersection")
+    print("Programminglanguages:", programmingLanguages)
+    print("Object oriented languages", objectOrientedLanguages)
+    intersectedSet = interSectSets(programmingLanguages, objectOrientedLanguages)
+    print(intersectedSet)
 
     print("-------------------------------------------------")
-    print("Exercise 7")
+    print("Exercise 7 - union")
+    print("Programminglanguages:", programmingLanguages)
+    print("Object oriented languages", objectOrientedLanguages)
+    unionSet = unifySets(programmingLanguages, objectOrientedLanguages)
+    print(unionSet)
 
     print("-------------------------------------------------")
-    print("Exercise 8")
+    print("Exercise 8 - difference")
+    print("Programminglanguages:", programmingLanguages)
+    print("Object oriented languages", objectOrientedLanguages)
+    differenceSet1 = differSets1(programmingLanguages, objectOrientedLanguages)
+    differenceSet2 = differSets2(programmingLanguages, objectOrientedLanguages)
+    print("Difference set 1:", differenceSet1)
+    print("Difference set 2:", differenceSet2)
 
     print("-------------------------------------------------")
-    print("Exercise 9")
+    print("Exercise 9 - symmetric difference")
+    symmetricDifferenceSets = symmetricDifferSets(programmingLanguages, objectOrientedLanguages)
+    print(symmetricDifferenceSets)
 
     print("-------------------------------------------------")
-    print("Exercise 10")
+    print("Exercise 10 - isSubset and isSuperset")
 
     print("-------------------------------------------------")
     print("Exercise 11")
